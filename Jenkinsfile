@@ -1,13 +1,13 @@
 pipeline{
     agent{
-        lable"server1"
+        label"server1"
     }
     tools{
         jdk 'java17'
         maven 'Maven3'
     }
     stages{
-        stage{"cleanup Workspace"}{
+        stage{"Cleanup Workspace"}{
             steps{
                 cleanWs()
             }
@@ -15,7 +15,7 @@ pipeline{
     }
 
     
-        stage{"cleanup Workspace"}{
+        stage{"Cleanup from SCM"}{
             steps{
                 git branch:'main',credentialsID: 'github', url: 'https://github.com/Pankaj111777/jenkins_pipeline'
             }
