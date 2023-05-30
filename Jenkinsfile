@@ -7,7 +7,7 @@ pipeline{
         maven 'Maven3'
     }
     stages{
-        stage{"Cleanup Workspace"}{
+        stage("Cleanup Workspace"){
             steps{
                 cleanWs()
             }
@@ -15,7 +15,7 @@ pipeline{
     }
 
     
-        stage{"Cleanup from SCM"}{
+        stage("Cleanup from SCM"){
             steps{
                 git branch:'main',credentialsID: 'github', url: 'https://github.com/Pankaj111777/jenkins_pipeline'
             }
