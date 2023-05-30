@@ -14,10 +14,10 @@ pipeline{
         }
     }
 
-    stages{
-            stage{"cleanup Workspace"}{
-                steps{
-                    git branch:'main',
-                }
+    
+        stage{"cleanup Workspace"}{
+            steps{
+                git branch:'main',credentialsID: 'github', url: 'https://github.com/Pankaj111777/jenkins_pipeline'
             }
+        }
 }
